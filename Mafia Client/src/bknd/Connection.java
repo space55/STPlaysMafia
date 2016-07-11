@@ -23,6 +23,9 @@ public class Connection
 
 	public static MessageListener ml;
 
+	/**
+	 * Initializes Server Connection
+	 */
 	public static void init()
 	{
 		try

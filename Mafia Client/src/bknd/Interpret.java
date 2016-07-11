@@ -15,7 +15,11 @@ public class Interpret
 {
 	public static void run(String msg)
 	{
-		String args = msg.substring(msg.indexOf(" ") + 1);
+		String args = "";
+		if (msg.indexOf(" ") != -1)
+		{
+			args = msg.substring(msg.indexOf(" ") + 1);
+		}
 		if (msg.startsWith("MESSAGE"))
 		{
 			Client.messages.add(args);
@@ -23,6 +27,7 @@ public class Interpret
 		else if (msg.startsWith("WHOACTION"))
 		{
 			OPlayer actionOn = Client.getVote();
+			Connection.send("ACTIONON " + actionOn.getUsername());
 		}
 		else if (msg.equals("KILLED"))
 		{

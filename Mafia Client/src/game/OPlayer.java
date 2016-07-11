@@ -7,6 +7,8 @@
 
 package game;
 
+import bknd.Client;
+
 public class OPlayer
 {
 	private String username;
@@ -38,8 +40,15 @@ public class OPlayer
 	public void kill()
 	{
 		alive = false;
+		Client.wasKilled(this);
 	}
 
+	/**
+	 * Sets the user's role
+	 * 
+	 * @param role
+	 *            Role of the player to be set
+	 */
 	public void setRole(Role role)
 	{
 		this.role = role;
