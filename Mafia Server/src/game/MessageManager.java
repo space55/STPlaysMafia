@@ -18,6 +18,6 @@ public class MessageManager
 	public static void add(String message)
 	{
 		messages.add(message);
-		PlayerManager.sendMessage(message);
+		PlayerManager.sendMessage(message); // I LIKE TO TEST
 	}
 }
