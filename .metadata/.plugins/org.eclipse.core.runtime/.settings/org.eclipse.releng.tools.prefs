@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.eclipse.releng.tools.copyrightTemplate=Copyright (C) Eamonn Nugent - All Rights Reserved\n Unauthorized copying of this file, via any medium is strictly prohibited\n Proprietary and confidential\n Written by Eamonn Nugent <elg.nugent@gmail.com>, ${date}
+org.eclipse.releng.tools.replaceAllExisting=true

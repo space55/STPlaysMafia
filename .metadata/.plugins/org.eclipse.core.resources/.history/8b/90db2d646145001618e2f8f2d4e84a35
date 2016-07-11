@@ -1,0 +1,21 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package player;
+
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class PlayerManager
+{
+	public static ArrayList<Player> players = new ArrayList<Player>();
+
+	public static void add(Socket s)
+	{
+		players.add(new Player(s));
+	}
+}

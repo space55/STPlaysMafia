@@ -1,0 +1,21 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package game;
+
+import java.util.ArrayList;
+
+public class MessageManager
+{
+	ArrayList<String> messages = new ArrayList<String>();
+	
+	public void add(String message)
+	{
+		messages.add(message);
+		PlayerManager.sendMessage(message);
+	}
+}

@@ -1,0 +1,21 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package conn;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+public class Connection
+{
+	public static Socket s;
+
+	private static PrintWriter out;
+	private static BufferedReader in;
+
+}

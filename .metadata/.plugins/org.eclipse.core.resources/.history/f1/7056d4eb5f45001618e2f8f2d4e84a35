@@ -1,0 +1,20 @@
+package player;
+
+import java.net.Socket;
+
+import javax.management.relation.Role;
+
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+public class Player
+{
+	private Socket s;
+	private Role role;
+	private boolean alive;
+
+}

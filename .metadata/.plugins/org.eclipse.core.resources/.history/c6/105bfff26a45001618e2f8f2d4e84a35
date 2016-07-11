@@ -1,0 +1,80 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package player;
+
+import java.net.Socket;
+import java.util.ArrayList;
+
+import game.Server;
+
+public class PlayerManager
+{
+	public static ArrayList<Player> players = new ArrayList<Player>();
+
+	public static void add(Socket s)
+	{
+		players.add(new Player(s));
+		if (Server.inProgress)
+		{
+			players.get(players.size() - 1).setRole(Role.SPECTATOR);
+		}
+	}
+
+	public static void sendMessage(String message)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			players.get(i).send("MESSAGE " + message);
+		}
+	}
+
+	public static void sendRoles()
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			players.get(i).sendRole();
+		}
+	}
+
+	public static Player get(String name)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			if (players.get(i).getUsername().equals(name))
+			{
+				return players.get(i);
+			}
+		}
+		return null;
+	}
+
+	public static int indexOf(Player p)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			if (players.get(i) == p)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static Player get(int id)
+	{
+		return players.get(id);
+	}
+	
+	public static void sendAll(String msg)
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			players.get(i).send(msg);
+		}
+	}
+}

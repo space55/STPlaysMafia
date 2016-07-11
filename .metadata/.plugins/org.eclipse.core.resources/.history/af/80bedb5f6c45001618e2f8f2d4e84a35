@@ -1,0 +1,30 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package bknd;
+
+public class MessageListener implements Runnable
+{
+	public Thread t;
+	
+	public MessageListener()
+	{
+		t = new Thread(this);
+		t.start();
+	}
+	public void run()
+	{
+		while (true)
+		{
+			String temp = Connection.read();
+			if (temp != null && !temp.equals(""))
+			{
+				Interpret.run(temp);
+			}
+		}
+	}
+}

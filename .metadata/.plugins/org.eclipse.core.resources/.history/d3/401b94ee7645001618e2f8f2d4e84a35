@@ -1,0 +1,28 @@
+/*******************************************************************************
+ * Copyright (C) Eamonn Nugent - All Rights Reserved
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Proprietary and confidential
+ *  Written by Eamonn Nugent <elg.nugent@gmail.com>, 2016
+ *******************************************************************************/
+
+package game;
+
+public class Player
+{
+	private static int score = 0;
+	private static Role role;
+	private static boolean alive;
+
+	public static void day()
+	{
+		
+	}
+	
+	public static void win(Role role)
+	{
+		if (this.role == role)
+		{
+			
+		}
+	}
+}
