@@ -109,7 +109,7 @@ public class Client extends JFrame implements ActionListener, Runnable
 		{
 			for (int j = 0; j < buttons[0].length; j++)
 			{
-				panel.add(buttons[i][j]);
+				buttons[i][j].addActionListener(this);
 			}
 		}
 	}
