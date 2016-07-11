@@ -9,9 +9,28 @@ package bknd;
 
 import java.util.ArrayList;
 
-public class Client
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class Client extends JFrame
 {
 	public static String username = "undefined";
-
 	public static ArrayList<String> messages = new ArrayList<String>();
+
+	public static void run()
+	{
+		init();
+	}
+
+	public static void init()
+	{
+		username = JOptionPane.showInputDialog("What is your username?");
+		JPanel buttons = new JPanel();
+	}
+
+	public static OPlayer getVote()
+	{
+		return null;
+	}
 }
