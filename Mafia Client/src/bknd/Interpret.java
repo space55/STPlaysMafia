@@ -7,7 +7,9 @@
 
 package bknd;
 
+import game.OPlayer;
 import game.Player;
+import game.Server;
 
 public class Interpret
 {
@@ -20,11 +22,17 @@ public class Interpret
 		}
 		else if (msg.startsWith("WHOACTION"))
 		{
-
+			OPlayer actionOn = Client.getVote();
 		}
 		else if (msg.equals("KILLED"))
 		{
 			Player.kill();
+		}
+		else if (msg.startsWith("PLAYERKILLED"))
+		{
+			int i = msg.indexOf("U=") + 2;
+			String username = msg.substring(i, msg.indexOf(" ", i));
+			Server.kill(username);
 		}
 	}
 }
