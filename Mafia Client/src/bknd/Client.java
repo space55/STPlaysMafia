@@ -13,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import game.OPlayer;
+
 public class Client extends JFrame
 {
 	public static String username = "undefined";
