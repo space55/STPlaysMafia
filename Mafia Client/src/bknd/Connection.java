@@ -63,4 +63,9 @@ public class Connection
 		}
 		return null;
 	}
+
+	public static String[] getUsernames()
+	{
+		return null;
+	}
 }
