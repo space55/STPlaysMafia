@@ -21,6 +21,7 @@ public class Player
 	public static void night()
 	{
 		// Night-y graphics stuff goes here
+		// Hi!
 	}
 
 	public static void pick()
