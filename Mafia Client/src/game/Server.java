@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Server
 {
-	private static ArrayList<OPlayer> players = new ArrayList<OPlayer>();
+	public static ArrayList<OPlayer> players = new ArrayList<OPlayer>();
 
 	public static void add(OPlayer p)
 	{
