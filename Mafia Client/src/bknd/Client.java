@@ -42,7 +42,6 @@ public class Client extends JFrame implements ActionListener
 	public void init()
 	{
 		username = JOptionPane.showInputDialog("What is your username?");
-
 		int columns = (int) Math.sqrt(Server.players.size());
 		for (int i = 0; i < Server.players.size(); i++)
 		{
