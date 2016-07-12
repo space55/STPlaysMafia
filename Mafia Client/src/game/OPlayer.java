@@ -7,7 +7,7 @@
 
 package game;
 
-import bknd.Client;
+import bknd.Main;
 
 public class OPlayer
 {
@@ -40,7 +40,7 @@ public class OPlayer
 	public void kill()
 	{
 		alive = false;
-		Client.wasKilled(this);
+		Main.c.wasKilled(this);
 	}
 
 	/**
