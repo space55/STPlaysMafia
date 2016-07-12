@@ -36,11 +36,11 @@ public class Connection
 		}
 		catch (ConnectException e)
 		{
+			System.out.println("Server isn't up");
 			System.exit(1);
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -20,6 +20,18 @@ public class Server
 	public static void main(String args[])
 	{
 		init();
+		while (PlayerManager.players.size() < 7)
+		{
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		startGame();
 	}
 
 	public static void init()
