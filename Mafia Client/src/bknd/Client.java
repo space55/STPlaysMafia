@@ -31,8 +31,6 @@ public class Client extends JFrame implements ActionListener
 	public void run()
 	{
 		init();
-		add(panel);
-		setVisible(true);
 	}
 
 	/**
