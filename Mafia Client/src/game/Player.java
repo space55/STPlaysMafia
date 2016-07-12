@@ -7,6 +7,8 @@
 
 package game;
 
+import bknd.Client;
+
 public class Player
 {
 	private static int score = 0;
@@ -15,13 +17,13 @@ public class Player
 
 	public static void day()
 	{
-		// Day-y graphics stuff goes here
+		Client.showDeathMessage();
+		Client.setButtonBackground(0);
 	}
 
 	public static void night()
 	{
-		// Night-y graphics stuff goes here
-		// Hi!
+		Client.setButtonBackground(1);
 	}
 
 	public static void pick()

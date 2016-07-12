@@ -7,13 +7,18 @@
 
 package bknd;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 import game.OPlayer;
 import game.Server;
@@ -24,7 +29,7 @@ public class Client extends JFrame
 	public static ArrayList<String> messages = new ArrayList<String>();
 	public static String deathMessage = "";
 	public static JButton[][] buttons = {};
-	public JPanel panel;
+	public static JPanel panel;
 
 	public void run()
 	{
@@ -60,7 +65,15 @@ public class Client extends JFrame
 			}
 		}
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(buttons.length, buttons[0].length));
+		GridLayout g = new GridLayout(buttons.length, buttons[0].length);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		g.setHgap((int) ((width / buttons[0].length) / 3));
+		g.setVgap((int) ((width / buttons.length) / 3));
+		panel.setLayout(g);
+		JScrollPane scrollPane = new JScrollPane(panel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		for (int i = 0; i < buttons.length; i++)
 		{
 			for (int j = 0; j < buttons[i].length; j++)
@@ -69,7 +82,8 @@ public class Client extends JFrame
 			}
 		}
 		panel.setVisible(true);
-		add(panel);
+		scrollPane.setVisible(true);
+		add(scrollPane);
 		setVisible(true);
 	}
 
@@ -101,9 +115,31 @@ public class Client extends JFrame
 		deathMessage += p.getUsername() + " was killed. \n";
 	}
 
-	public void day()
+	/**
+	 * Creates a pop-up window containing a message with the list of players who
+	 * died over the night.
+	 */
+	public static void showDeathMessage()
 	{
 		JOptionPane.showMessageDialog(null, deathMessage);
 		deathMessage = "";
+	}
+
+	/**
+	 * Sets the background color of the button panel.
+	 * 
+	 * @param time
+	 *            0 for day colors, 1 for night colors
+	 */
+	public static void setButtonBackground(int time)
+	{
+		if (time == 0)
+		{
+			panel.setBackground(Color.GREEN);
+		}
+		else if (time == 1)
+		{
+			panel.setBackground(Color.BLACK);
+		}
 	}
 }
