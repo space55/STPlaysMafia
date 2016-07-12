@@ -33,11 +33,19 @@ public class Interpret
 		{
 			Player.kill();
 		}
+		else if (msg.startsWith("GETUNAME"))
+		{
+			Connection.send("USERNAME " + Client.username);
+		}
 		else if (msg.startsWith("PLAYERKILLED"))
 		{
 			int i = msg.indexOf("U=") + 2;
 			String username = msg.substring(i, msg.indexOf(" ", i));
 			Server.kill(username);
+		}
+		else if (msg.startsWith("GAMESTART"))
+		{
+
 		}
 	}
 }

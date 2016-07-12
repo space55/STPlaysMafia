@@ -46,6 +46,7 @@ public class Server
 
 		generatePlayers(num, numMaf, serialKiller, oldMan);
 
+		PlayerManager.sendAll("GAMESTART");
 		Role temp = null;
 		while ((temp = allThere()) == null)
 		{
