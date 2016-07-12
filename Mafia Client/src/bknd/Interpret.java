@@ -7,7 +7,6 @@
 
 package bknd;
 
-import game.OPlayer;
 import game.Player;
 import game.Server;
 
@@ -24,10 +23,17 @@ public class Interpret
 		{
 			Client.messages.add(args);
 		}
-		else if (msg.startsWith("WHOACTION"))
+		else if (msg.equals("WHOACTION"))
 		{
-			OPlayer actionOn = Main.c.getVote();
-			Connection.send("ACTIONON " + actionOn.getUsername());
+			Main.c.enableVote();
+		}
+		else if (msg.startsWith("VOTEDON"))
+		{
+			Server.voted(args);
+		}
+		else if (msg.equals("STOPVOTE"))
+		{
+			Main.c.stopVote();
 		}
 		else if (msg.equals("KILLED"))
 		{
