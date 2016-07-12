@@ -8,21 +8,25 @@
 package game;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
 import bknd.Main;
 
-public class OPlayer
+public class OPlayer implements ActionListener
 {
 	private String username;
 	private Role role;
 	private boolean alive;
 	private JButton button;
 	private boolean voted;
+	public static boolean voteEnabled;
 
 	public OPlayer(String username, Role role, boolean alive)
 	{
+		button.addActionListener(this);
 		this.username = username;
 		this.role = role;
 		this.alive = alive;
@@ -173,5 +177,14 @@ public class OPlayer
 	public JButton getButton()
 	{
 		return button;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		if (e.getSource() == button && voteEnabled)
+		{
+			// TODO Add code for when button is pressed.
+		}
 	}
 }

@@ -8,8 +8,6 @@
 package bknd;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -20,14 +18,13 @@ import javax.swing.JPanel;
 import game.OPlayer;
 import game.Server;
 
-public class Client extends JFrame implements ActionListener
+public class Client extends JFrame
 {
 	public static String username = "undefined";
 	public static ArrayList<String> messages = new ArrayList<String>();
 	public static String deathMessage = "";
 	public static JButton[][] buttons = {};
 	public JPanel panel;
-	public boolean voteEnabled;
 
 	public void run()
 	{
@@ -68,7 +65,6 @@ public class Client extends JFrame implements ActionListener
 		{
 			for (int j = 0; j < buttons[i].length; j++)
 			{
-				buttons[i][j].addActionListener(this);
 				panel.add(buttons[i][j]);
 			}
 		}
@@ -83,7 +79,7 @@ public class Client extends JFrame implements ActionListener
 	 */
 	public void enableVote()
 	{
-
+		OPlayer.voteEnabled = true;
 	}
 
 	/**
@@ -91,7 +87,7 @@ public class Client extends JFrame implements ActionListener
 	 */
 	public void disableVote()
 	{
-
+		OPlayer.voteEnabled = false;
 	}
 
 	/**
@@ -109,11 +105,5 @@ public class Client extends JFrame implements ActionListener
 	{
 		JOptionPane.showMessageDialog(null, deathMessage);
 		deathMessage = "";
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-
 	}
 }
