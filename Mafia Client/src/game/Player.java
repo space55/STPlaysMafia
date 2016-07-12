@@ -14,16 +14,19 @@ public class Player
 	private static int score = 0;
 	private static Role role;
 	private static boolean alive;
+	public static boolean day = true;
 
 	public static void day()
 	{
 		Client.showDeathMessage();
 		Client.setButtonBackground(0);
+		day = true;
 	}
 
 	public static void night()
 	{
 		Client.setButtonBackground(1);
+		day = false;
 	}
 
 	public static void pick()
@@ -75,5 +78,10 @@ public class Player
 	public static void kill()
 	{
 		alive = false;
+	}
+
+	public static Role getRole()
+	{
+		return role;
 	}
 }
