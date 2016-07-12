@@ -101,4 +101,14 @@ public class Server
 		}
 		return s;
 	}
+
+	public static void voted(String uname)
+	{
+		get(uname).vote();
+	}
+
+	public static void deVoted(String uname)
+	{
+		get(uname).deVote();
+	}
 }

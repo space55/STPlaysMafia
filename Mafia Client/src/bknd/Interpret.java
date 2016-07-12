@@ -7,7 +7,6 @@
 
 package bknd;
 
-import game.OPlayer;
 import game.Player;
 import game.Server;
 
@@ -24,20 +23,43 @@ public class Interpret
 		{
 			Client.messages.add(args);
 		}
-		else if (msg.startsWith("WHOACTION"))
+		else if (msg.equals("WHOACTION"))
 		{
-			OPlayer actionOn = Main.c.getVote();
-			Connection.send("ACTIONON " + actionOn.getUsername());
+			Main.c.enableVote();
+		}
+		else if (msg.startsWith("VOTEDON"))
+		{
+			Server.voted(args);
+		}
+		else if (msg.equals("STOPVOTE"))
+		{
+			Main.c.stopVote();
 		}
 		else if (msg.equals("KILLED"))
 		{
 			Player.kill();
+		}
+		else if (msg.startsWith("GETUNAME"))
+		{
+			Connection.send("USERNAME " + Client.username);
 		}
 		else if (msg.startsWith("PLAYERKILLED"))
 		{
 			int i = msg.indexOf("U=") + 2;
 			String username = msg.substring(i, msg.indexOf(" ", i));
 			Server.kill(username);
+		}
+		else if (msg.equals("GAMESTART"))
+		{
+			Main.startGame();
+		}
+		else if (msg.equals("STARTDAY"))
+		{
+			Player.day();
+		}
+		else if (msg.equals("STARTNIGHT"))
+		{
+			Player.night();
 		}
 	}
 }

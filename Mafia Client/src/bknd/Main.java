@@ -16,4 +16,9 @@ public class Main
 		c = new Client();
 		c.run();
 	}
+
+	public static void run()
+	{
+		c.startGame();
+	}
 }

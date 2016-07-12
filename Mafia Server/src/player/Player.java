@@ -89,10 +89,11 @@ public class Player implements Runnable
 
 	public void night()
 	{
+		send("STARTNIGHT");
 		if (role != Role.SPECTATOR && role != Role.INNOCENT)
 		{
 			confirmed = false;
-			send("WHOACTION");
+			send("WHOACTION"); // 2/3 majority or 20 seconds + largest #
 		}
 	}
 
@@ -107,6 +108,7 @@ public class Player implements Runnable
 		}
 		invuln = false;
 		toDie = !alive;
+		send("STARTDAY");
 	}
 
 	public void performAction(Role role, Player parent)
