@@ -33,7 +33,7 @@ public class Interpret
 		}
 		else if (msg.equals("STOPVOTE"))
 		{
-			Main.c.stopVote();
+			Main.c.disableVote();
 		}
 		else if (msg.equals("KILLED"))
 		{

@@ -21,4 +21,9 @@ public class Main
 	{
 		c.startGame();
 	}
+
+	public static void startGame()
+	{
+		// Meh
+	}
 }
