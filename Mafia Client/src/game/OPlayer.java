@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import bknd.Connection;
 import bknd.Main;
 
 public class OPlayer implements ActionListener
@@ -108,6 +109,7 @@ public class OPlayer implements ActionListener
 	public void vote()
 	{
 		button.setBackground(Color.GREEN);
+		Connection.send("ACTIONON " + username);
 	}
 
 	/**
@@ -116,6 +118,7 @@ public class OPlayer implements ActionListener
 	public void deVote()
 	{
 		button.setBackground(Color.WHITE);
+		Connection.send("NACTIONON " + username);
 	}
 
 	/**
@@ -184,7 +187,21 @@ public class OPlayer implements ActionListener
 	{
 		if (e.getSource() == button && voteEnabled)
 		{
-			// TODO Add code for when button is pressed.
+			if (Player.day)
+			{
+				Server.deVoteAll();
+				Server.voted(this);
+			}
+			else
+			{
+				Role t = Player.getRole();
+				if (t == Role.MAFIA || t == Role.DOCTOR || t == Role.OLD_MAN || t == Role.INVESTIGATOR
+						|| t == Role.SERIAL_KILLER)
+				{
+					Server.deVoteAll();
+					vote();
+				}
+			}
 		}
 	}
 }

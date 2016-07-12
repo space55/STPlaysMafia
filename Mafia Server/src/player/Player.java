@@ -147,6 +147,16 @@ public class Player implements Runnable
 		invuln = false;
 	}
 
+	public void vote()
+	{
+		votes++;
+	}
+
+	public void deVote()
+	{
+		votes--;
+	}
+
 	public Role getRole()
 	{
 		return role;

@@ -12,14 +12,17 @@ public class Player
 	private static int score = 0;
 	private static Role role;
 	private static boolean alive;
+	public static boolean day;
 
 	public static void day()
 	{
+		day = true;
 		// Day-y graphics stuff goes here
 	}
 
 	public static void night()
 	{
+		day = false;
 		// Night-y graphics stuff goes here
 		// Hi!
 	}
@@ -73,5 +76,10 @@ public class Player
 	public static void kill()
 	{
 		alive = false;
+	}
+
+	public static Role getRole()
+	{
+		return role;
 	}
 }

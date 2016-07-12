@@ -102,13 +102,31 @@ public class Server
 		return s;
 	}
 
+	public static void voted(OPlayer player)
+	{
+		player.vote();
+	}
+
 	public static void voted(String uname)
 	{
-		get(uname).vote();
+		voted(get(uname));
+	}
+
+	public static void deVoted(OPlayer player)
+	{
+		player.deVote();
 	}
 
 	public static void deVoted(String uname)
 	{
-		get(uname).deVote();
+		deVoted(get(uname));
+	}
+
+	public static void deVoteAll()
+	{
+		for (int i = 0; i < players.size(); i++)
+		{
+			players.get(i).deVote();
+		}
 	}
 }
