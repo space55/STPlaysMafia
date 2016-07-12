@@ -24,8 +24,12 @@ public class Interpret
 		}
 		else if (s.startsWith("ACTIONON"))
 		{
-			PlayerManager.get(args).performAction(parent.getRole(), parent);
-			parent.confirm();
+			PlayerManager.get(args).vote(); // performAction(parent.getRole(),
+											// parent);
+		}
+		else if (s.startsWith("NACTIONON"))
+		{
+			PlayerManager.get(args).deVote();
 		}
 	}
 }

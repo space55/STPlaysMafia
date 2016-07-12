@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;bknd.Client.day()&apos; to &apos;showDeathMessage&apos;&#x0D;&#x0A;- Original project: &apos;Mafia Client&apos;&#x0D;&#x0A;- Original element: &apos;bknd.Client.day()&apos;&#x0D;&#x0A;- Renamed element: &apos;bknd.Client.showDeathMessage()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;day&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;bknd{Client.java[Client~day" name="showDeathMessage" references="true" stamp="1468334831714" version="1.0"/>
+</session>
