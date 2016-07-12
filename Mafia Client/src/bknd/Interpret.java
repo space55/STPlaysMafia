@@ -26,7 +26,7 @@ public class Interpret
 		}
 		else if (msg.startsWith("WHOACTION"))
 		{
-			OPlayer actionOn = Client.getVote();
+			OPlayer actionOn = Main.c.getVote();
 			Connection.send("ACTIONON " + actionOn.getUsername());
 		}
 		else if (msg.equals("KILLED"))
