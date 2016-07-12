@@ -56,7 +56,7 @@ public class Client extends JFrame implements ActionListener
 				if (i < Server.players.size())
 				{
 					Server.players.get(i).setButton(new JButton(Server.get(i).getUsername()));
-					Server.players.get(i).getButton.setVisible(true);
+					Server.players.get(i).getButton().setVisible(true);
 					buttons[i][a] = Server.players.get(i).getButton();
 					i++;
 				}
