@@ -43,9 +43,17 @@ public class Interpret
 			String username = msg.substring(i, msg.indexOf(" ", i));
 			Server.kill(username);
 		}
-		else if (msg.startsWith("GAMESTART"))
+		else if (msg.equals("GAMESTART"))
 		{
-
+			Main.startGame();
+		}
+		else if (msg.equals("STARTDAY"))
+		{
+			Player.day();
+		}
+		else if (msg.equals("STARTNIGHT"))
+		{
+			Player.night();
 		}
 	}
 }
