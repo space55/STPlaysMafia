@@ -74,7 +74,7 @@ public class Client extends JFrame implements ActionListener
 	 * 
 	 * @return The player that was voted for.
 	 */
-	public static OPlayer getVote()
+	public OPlayer getVote()
 	{
 		return null;
 	}
@@ -85,7 +85,7 @@ public class Client extends JFrame implements ActionListener
 	 * @param p
 	 *            The player that was killed.
 	 */
-	public static void wasKilled(OPlayer p)
+	public void wasKilled(OPlayer p)
 	{
 		deathMessage += p.getUsername() + " was killed. \n";
 	}
