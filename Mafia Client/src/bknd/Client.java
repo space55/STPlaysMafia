@@ -27,6 +27,7 @@ public class Client extends JFrame implements ActionListener
 	public static String deathMessage = "";
 	public static JButton[][] buttons = {};
 	public JPanel panel;
+	public boolean voteEnabled;
 
 	public void run()
 	{
@@ -34,31 +35,38 @@ public class Client extends JFrame implements ActionListener
 	}
 
 	/**
-	 * Sets up a client GUI.
+	 * Initializes client.
 	 * 
 	 */
 	public void init()
 	{
 		username = JOptionPane.showInputDialog("What is your username?");
-		int columns = (int) Math.sqrt(Server.players.size());
+	}
+
+	/**
+	 * Displays client GUI.
+	 */
+	public void startGame()
+	{
+		int columns = (int) Math.round(Math.sqrt(Server.players.size()));
 		for (int i = 0; i < Server.players.size(); i++)
 		{
 			for (int a = 0; a < columns; a++)
 			{
 				if (i < Server.players.size())
 				{
-					JButton temp = new JButton(Server.get(i).getUsername());
-					temp.setVisible(true);
-					buttons[i][a] = temp;
+					Server.players.get(i).setButton(new JButton(Server.get(i).getUsername()));
+					Server.players.get(i).getButton.setVisible(true);
+					buttons[i][a] = Server.players.get(i).getButton();
 					i++;
 				}
 			}
 		}
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setLayout(new GridLayout(buttons.length, buttons[0].length));
 		for (int i = 0; i < buttons.length; i++)
 		{
-			for (int j = 0; j < buttons[0].length; j++)
+			for (int j = 0; j < buttons[i].length; j++)
 			{
 				buttons[i][j].addActionListener(this);
 				panel.add(buttons[i][j]);
@@ -70,13 +78,20 @@ public class Client extends JFrame implements ActionListener
 	}
 
 	/**
-	 * Returns the vote of a player.
+	 * Activates voting.
 	 * 
-	 * @return The player that was voted for.
 	 */
-	public OPlayer getVote()
+	public void enableVote()
 	{
-		return null;
+
+	}
+
+	/**
+	 * Disables voting.
+	 */
+	public void disableVote()
+	{
+
 	}
 
 	/**
@@ -88,6 +103,12 @@ public class Client extends JFrame implements ActionListener
 	public void wasKilled(OPlayer p)
 	{
 		deathMessage += p.getUsername() + " was killed. \n";
+	}
+
+	public void day()
+	{
+		JOptionPane.showMessageDialog(null, deathMessage);
+		deathMessage = "";
 	}
 
 	@Override
