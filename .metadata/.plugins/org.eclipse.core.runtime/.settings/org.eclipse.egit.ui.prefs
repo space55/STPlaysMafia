@@ -1,2 +1,2 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>imported OPlayer into Client</message>\r\n<message>Started Client</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Fixed small start bugs</message>\r\n<message>Fixed mini-bug</message>\r\n<message>Added getRole() and day boolean</message>\r\n<message>imported OPlayer into Client</message>\r\n<message>Started Client</message>\r\n</messages>
 eclipse.preferences.version=1

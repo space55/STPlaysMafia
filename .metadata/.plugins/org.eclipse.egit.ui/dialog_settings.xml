@@ -9,9 +9,11 @@
 		<item value="https://github.com/space55/STPlaysMafia.git"/>
 	</list>
 	<list key="CommitDialog.authorValues">
+		<item value="space55 &lt;elg.nugent@gmail.com&gt;"/>
 		<item value="Psiborg13 &lt;sfp13@me.com&gt;"/>
 	</list>
 	<list key="CommitDialog.committerValues">
+		<item value="space55 &lt;elg.nugent@gmail.com&gt;"/>
 		<item value="Psiborg13 &lt;sfp13@me.com&gt;"/>
 	</list>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
